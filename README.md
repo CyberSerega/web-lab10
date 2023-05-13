@@ -266,22 +266,19 @@ printArray(arr);
 </pre>
 <p>12</p>
 <pre>
-function deepEqual(arg1, arg2)
+function deepEqual(x, y)
 {
-    if(typeof(arg1) != 'object' && typeof(arg2) != 'object') return arg1 === arg2;
+ if(typeof(x) != 'object' && typeof(y) != 'object') return x === y;
+ if(x == null && y == null) return true;
+ if(x == null || y == null) return false;
+ let keys1 = Object.keys(x);
+ let keys2 = Object.keys(y);
 
-    if(arg1 == null && arg2 == null) return true;
-    if(arg1 == null || arg2 == null) return false;
+ if(keys1.length != keys2.length) return false;
 
-    let keys1 = Object.keys(arg1);
-    let keys2 = Object.keys(arg2);
-
-    if(keys1.length != keys2.length) return false;
-
-    for(key of keys1)
-        if(!keys2.includes(key) || !deepEqual(arg1[key], arg2[key])) return false;
-
-    return true;
+ for(key of keys1)
+ if(!keys2.includes(key) || !deepEqual(x[key], y[key])) return false;
+ return true;
 }
 </pre>
 <p>13</p>
