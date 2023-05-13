@@ -266,18 +266,23 @@ printArray(arr);
 </pre>
 <p>12</p>
 <pre>
-<script>
-function isEven(x)
+function deepEqual(arg1, arg2)
 {
-	if (x<0) return false;
-	if (x==0) return true;
-	if (x==1) return false;
-	return isEven(x-2);
+    if(typeof(arg1) != 'object' && typeof(arg2) != 'object') return arg1 === arg2;
+
+    if(arg1 == null && arg2 == null) return true;
+    if(arg1 == null || arg2 == null) return false;
+
+    let keys1 = Object.keys(arg1);
+    let keys2 = Object.keys(arg2);
+
+    if(keys1.length != keys2.length) return false;
+
+    for(key of keys1)
+        if(!keys2.includes(key) || !deepEqual(arg1[key], arg2[key])) return false;
+
+    return true;
 }
-alert("Четное ли число 50?"+"\n"+" - "+ isEven(50));
-alert("Четное ли число 75?"+"\n"+" - "+ isEven(75));
-console.log(isEven(-1));
-</script>
 </pre>
 <p>13</p>
 <pre>
