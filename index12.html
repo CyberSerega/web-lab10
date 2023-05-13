@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<title>№12</title>
+</head>
+
+<body>
+<script>
+ object1 = {
+        property1: "123",
+        property2: 123,
+        property3: [1,2,3]
+    }
+
+    object2 = {
+        property1: "123",
+        property2: 123,
+        property3: [1,2,3]
+    }
+
+
+function deepEqual(x, y)
+{
+ if(typeof(x) != 'object' && typeof(y) != 'object') return x === y;
+ if(x == null && y == null) return true;
+ if(x == null || y == null) return false;
+ let keys1 = Object.keys(x);
+ let keys2 = Object.keys(y);
+if(keys1.length != keys2.length) return false;
+
+
+for(key of keys1)
+if(!keys2.includes(key) || !deepEqual(x[key], y[key])) return false;
+return true;
+}
+alert(deepEqual(object1,object2));
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<title>№3</title>
+</head>
+
+<body>
+<script>
+var str = "Sergey";
+function FindGlas(str)
+{
+	let count=0;
+	let glasn = 'aeiou'
+	for (let i=0;i<str.length;i++)
+	if (glasn.includes(str[i])) count++;
+	return count;
+}
+alert(FindGlas(str));
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<title>№8</title>
+</head>
+
+<body>
+<script>
+function isEven(x)
+{
+	if (x<0) return false;
+	if (x==0) return true;
+	if (x==1) return false;
+	return isEven(x-2);
+}
+alert("Четное ли число 50?"+"\n"+" - "+ isEven(50));
+alert("Четное ли число 75?"+"\n"+" - "+ isEven(75));
+console.log(isEven(-1));
+</script>
+</body>
+</html>

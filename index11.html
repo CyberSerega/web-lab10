@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<title>№11</title>
+</head>
+
+<body>
+<script>
+
+function reverseArray(array)
+{
+	let res = [];
+	for(let i=0; i<array.length; i++)
+		res[i]=array[array.length-1-i];
+	return res;
+}
+function reverseArrayInPlace(array)
+{
+
+	for(let i=0; i<array.length; i++)
+		array[i]=array[array.length-1-i];
+	return;
+}
+
+function printArray(array)
+{
+	let res="";
+	for(let i=0; i<array.length; i++)
+	{
+		res+=array[i]+" ";
+	}
+	console.log(res);
+}
+
+var arr = [12,15,16,24,30];
+console.log("Исходный массив: ");
+printArray(arr);
+
+var newArr = reverseArray(arr);
+console.log("Новый массив после reverseArray: ");
+printArray(newArr);
+
+reverseArrayInPlace(arr);
+console.log("Исходный массив после reverseArrayInPlace: ");
+printArray(arr);
+</script>
+</body>
+</html>

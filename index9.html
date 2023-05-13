@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<title>№9</title>
+</head>
+
+<body>
+<script>
+function countBs(str)
+{
+	let count=0;
+	for (let i=0;i<=str.length;i++)
+	{
+		if (str[i]=='B') count++;
+	}
+	return count;
+}
+function countChar(str,symbol)
+{
+	let count=0;
+	for (let i=0;i<=str.length;i++)
+	{
+		if (str[i]==symbol) count++;
+	}
+	return count;
+}
+var str="BOBS"
+console.log("Количество символов В в строке <<BOBS>> равно " + countBs(str));
+str="Web-technologies";
+var symbol='e'
+console.log(`Количество символов В в строке <<${str}>> равно ` + countChar(str,symbol));
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<title>№10</title>
+</head>
+
+<body>
+<script>
+
+function range(begin,end,step=1)
+{
+	let res = [];
+	let count=0;
+	if (step<0)
+	{
+		begin*=-1;
+		end*=-1;
+		step*=-1;
+	}
+	for(let i=begin; i<=end; i+=step)
+	{
+		res[count]=Math.abs(i);
+		count++;
+	}
+	return res;
+	
+}
+function sum(array)
+{
+	let res=0;
+	for(let i=0; i<array.length; i++)
+	{
+		res+=array[i];
+	}
+	return res;
+}
+arr1 = range(5,1,-1);
+for(let i=0; i<arr1.length; i++)
+	{
+		console.log(arr1[i]);
+	}
+console.log("Сумма чисел массива: " + sum(arr1));
+</script>
+</body>
+</html>
